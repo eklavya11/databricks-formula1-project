@@ -1,0 +1,27 @@
+{
+    "name": "formula1_process_trigger",
+    "properties": {
+        "annotations": [],
+        "runtimeState": "Started",
+        "pipelines": [
+            {
+                "pipelineReference": {
+                    "referenceName": "pl_trans_formula1_data",
+                    "type": "PipelineReference"
+                },
+                "parameters": {
+                    "p_window_end_date": "@trigger().ouputs.windowEndTime"
+                }
+            }
+        ],
+        "type": "ScheduleTrigger",
+        "typeProperties": {
+            "recurrence": {
+                "frequency": "Hour",
+                "interval": 24,
+                "startTime": "2025-02-23T09:00:00",
+                "timeZone": "India Standard Time"
+            }
+        }
+    }
+}
